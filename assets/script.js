@@ -24,6 +24,8 @@ function generatePassword () {
     var confirmLength = (prompt ("How many characters would you like your password to have?"));
   }
 
+  alert ("Your password will have ${confirmLength} characters");
+
 // Write password to the #password input
 
 
@@ -35,5 +37,14 @@ function writePassword() {
 
 }
 
+var confirmLowerCase = confirm("Click OK if you want to use lowercase letters");
+var confirmUpperCase = confirm("Click Ok if you want to to use uppercase letters");
+var confirmSpecialCharacter = confirm("Click Ok if you want to use special characters");
+var confirmNumericCharacter = confirm("Click Ok if you want to use numbers.");
+
+
+
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
