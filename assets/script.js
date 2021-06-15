@@ -1,13 +1,12 @@
-// Assignment Code
 document.querySelector("#generate").addEventListener("click", writePassword);
 
 // While I added uppercase, lowercase numbers, special symnbols and fullfilled the requirements, I also experimented further with adding emojis just for the fun of it. 
 
 var generateBtn = document.querySelector("#generate");
-var alphabetLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var alphabetUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var specialChar = ["!", "@", "#", "$", "%", "^", "&", "*", "?", "~", "|", ".", "_", "/", "`", "🌹", "💿", "🍕", "🚦", "🚀", "🍩", "🐸", "🦖", "🦕"];
-var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+const alphabetLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+const alphabetUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+const specialCharacter = ["!", "@", "#", "$", "%", "^", "&", "*", "?", "~", "|", ".", "_", "/", "`", "🌹", "💿", "🍕", "🚦", "🚀", "🍩", "🐸", "🦖", "🦕"];
+const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 
 var confirmLength = "";
@@ -16,66 +15,64 @@ var confirmUpperCase;
 var confirmSpecialCharacter;
 var NumericCharacter;
 
-function generatePassword () {
+function generatePassword() {
   var confirmLength = (prompt("How many characters would you like your password to be?"));
 
-
-  while(confirmLength <=7 || confirmLength >= 128) {
+  while (confirmLength <= 7 || confirmLength >= 128) {
     alert("Your password length must be between 8 - 128 characters! Please try again.");
-    var confirmLength = (prompt ("How many characters would you like your password to have?"));
+    var confirmLength = (prompt("How many characters would you like your password to have?"));
   }
 
-  alert ("Okay! Your password will have (confirmLength) characters");
+  alert("Okay! Click OK to continue customizing your password.");
 
-var confirmLowerCase = confirm("Click OK if you want to use lowercase letters.");
-var confirmUpperCase = confirm("Click OK if you want to use uppercase letters.");
-var confirmSpecialCharacter = confirm("Click OK if you want to use special characters.");
-var confirmNumericCharacter = confirm("Click OK if you want to use numbers.");
-
-while(confirmLowerCase === false && confirmUpperCase === false && confirmNumericCharacter === false && confirmSPEcialCharacter) {
-  
-  alert("You have to choose one parameter!");
   var confirmLowerCase = confirm("Click OK if you want to use lowercase letters.");
-  var confirmUpperCAse = confirm("Click OK if you want to use uppercase letters.");
-  var confirmSpecialCharacter = confirm("Click OK if you want to use special character symbols.");
+  var confirmUpperCase = confirm("Click OK if you want to use uppercase letters.");
+  var confirmSpecialCharacter = confirm("Click OK if you want to use special characters.");
   var confirmNumericCharacter = confirm("Click OK if you want to use numbers.");
-} 
 
-var passwordCharacters = []
+  while (confirmLowerCase === false && confirmUpperCase === false && confirmNumericCharacter === false && confirmSpecialCharacter === false) {
 
-if (confirmLowerCase) {
-  passwordCharacters = passwordCharacters.concat(alphabetLower)
+    alert("You have to choose at least one!");
+
+    var confirmLowerCase = confirm("Click OK if you want to use lowercase letters.");
+    var confirmUpperCase = confirm("Click OK if you want to use uppercase letters.");
+    var confirmSpecialCharacter = confirm("Click OK if you want to use special character symbols.");
+    var confirmNumericCharacter = confirm("Click OK if you want to use numbers.");
+  }
+
+  var passwordCharacters = []
+
+  if (confirmLowerCase) {
+    passwordCharacters = passwordCharacters.concat(alphabetLower)
+  }
+
+  if (confirmUpperCase) {
+    passwordCharacters = passwordCharacters.concat(alphabetUpper)
+  }
+
+  if (confirmSpecialCharacter) {
+    passwordCharacters = passwordCharacters.concat(specialCharacter)
+  }
+
+  if (confirmNumericCharacter) {
+    passwordCharacters = passwordCharacters.concat(numbers)
+  }
+
+  console.log(passwordCharacters)
+
+  var randomizedPassword = ""
+
+  for (var i = 0; i < confirmLength; i++) {
+    randomizedPassword = randomizedPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
+
+    console.log(randomizedPassword)
+  }
+  return randomizedPassword;
 }
 
-if (confirmUpperCase) {
-  passwordCharacters = passwordCharacters.concat(alphabetUpper)
-}
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-if (confirmSpecialCharacterss) {
-  passwordCharacters = passwordCharacters.concat(SpecialChar)
-}
-
-if (confirmNumericCharacter) {
-  passwordCharacters = passwordCharacters.concat(number)
-}
-
-console.log(passwordCharacters)
-
-var randomizedPassword = ""
-
-for (var i = 0; i <confirmLength; i++) {
-  randomizedPassword = randomizedPassword + passwordCharacters[Math.floor(Math.random () * passwordCharacters.length0];
-  
-  console.log(randomizedPassword)
-}
-
-return randomizedPassword;
-
-
-function writePassword () {
-  var password = generatePasswrod ();
-  var passwordText = document.querySelector("#password")
-}
-
-passwordText.value = password;
+  passwordText.value = password;
 }
