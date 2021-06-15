@@ -1,7 +1,7 @@
 // Assignment Code
 document.querySelector("#generate").addEventListener("click", writePassword);
 
-// While I added special symnbols and fullfilled the requirement, I also experimented further with adding emojis just for the fun of it. 
+// While I added uppercase, lowercase numbers, special symnbols and fullfilled the requirements, I also experimented further with adding emojis just for the fun of it. 
 
 var generateBtn = document.querySelector("#generate");
 var alphabetLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -28,15 +28,33 @@ function generatePassword () {
   alert ("Your password will have {confirmLength} characters");
 
 var confirmLowerCase = confirm("Click OK if you want to use lowercase letters.");
-var confirmUpperCase = confirm("Click Ok if you want to use uppercase letters.");
-var confirmSpecialCharacter = confirm("Click Ok if you want to use special characters.");
-var confirmNumericCharacter = confirm("Click Ok if you want to use numbers.");
+var confirmUpperCase = confirm("Click OK if you want to use uppercase letters.");
+var confirmSpecialCharacter = confirm("Click OK if you want to use special characters.");
+var confirmNumericCharacter = confirm("Click OK if you want to use numbers.");
 
 while(confirmLowerCase === false && confirmUpperCase === false && confirmNumericCharacter === false && confirmSPEcialCharacter) {
   
   alert("You have to choose one parameter!");
-  var confirmLowerCase = confirm("Click Ok if you want to use lowercase letters.");
-  var confirmUpperCAse = confirm("Click OK if you want to us uppercase letters.");
+  var confirmLowerCase = confirm("Click OK if you want to use lowercase letters.");
+  var confirmUpperCAse = confirm("Click OK if you want to use uppercase letters.");
   var confirmSpecialCharacter = confirm("Click OK if you want to use special character symbols.");
-  var confirm NumericCharacter = confirm("Click OK if you want to use numbers.");
+  var confirmNumericCharacter = confirm("Click OK if you want to use numbers.");
 } 
+
+var passwordCharacters = []
+
+if (confirmLowerCase) {
+  passwordCharacters = passwordCharacters.concat(alphabetLower)
+}
+
+if (confirmUpperCase) {
+  passwordCharacters = passwordCharacters.concat(alphannbetUpper)
+}
+
+if (confirmSpecialCharacterss) {
+  passwordCharacters = passwordCharacters.concat(SpecialChar)
+}
+
+if (confirmNumericCharacter) {
+  passwordCharacters = passwordCharacters.concat(number)
+}
