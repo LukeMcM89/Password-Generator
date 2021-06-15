@@ -25,7 +25,7 @@ function generatePassword () {
     var confirmLength = (prompt ("How many characters would you like your password to have?"));
   }
 
-  alert ("Your password will have {confirmLength} characters");
+  alert ("Okay! Your password will have (confirmLength) characters");
 
 var confirmLowerCase = confirm("Click OK if you want to use lowercase letters.");
 var confirmUpperCase = confirm("Click OK if you want to use uppercase letters.");
@@ -48,7 +48,7 @@ if (confirmLowerCase) {
 }
 
 if (confirmUpperCase) {
-  passwordCharacters = passwordCharacters.concat(alphannbetUpper)
+  passwordCharacters = passwordCharacters.concat(alphabetUpper)
 }
 
 if (confirmSpecialCharacterss) {
@@ -57,4 +57,25 @@ if (confirmSpecialCharacterss) {
 
 if (confirmNumericCharacter) {
   passwordCharacters = passwordCharacters.concat(number)
+}
+
+console.log(passwordCharacters)
+
+var randomizedPassword = ""
+
+for (var i = 0; i <confirmLength; i++) {
+  randomizedPassword = randomizedPassword + passwordCharacters[Math.floor(Math.random () * passwordCharacters.length0];
+  
+  console.log(randomizedPassword)
+}
+
+return randomizedPassword;
+
+
+function writePassword () {
+  var password = generatePasswrod ();
+  var passwordText = document.querySelector("#password")
+}
+
+passwordText.value = password;
 }
