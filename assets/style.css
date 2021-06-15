@@ -14,7 +14,7 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  background-color: grey;
 }
 
 .wrapper {
@@ -28,6 +28,14 @@ header {
   padding: 20px;
   padding-top: 0px;
   color: hsl(206, 17%, 28%);
+}
+
+h1 {
+  color: rgba(247, 77, 55, 0.87) 
+}
+
+h2 {
+  text-align: center;
 }
 
 .card {
@@ -46,7 +54,7 @@ header {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background: red;
   height: 2px;
 }
 
@@ -62,7 +70,7 @@ header {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background: red;
   height: 2px;
 }
 
