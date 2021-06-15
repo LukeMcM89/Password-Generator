@@ -2,6 +2,8 @@ document.querySelector("#generate").addEventListener("click", writePassword);
 
 // While I added uppercase, lowercase numbers, special symnbols and fullfilled the requirements, I also experimented further with adding emojis just for the fun of it. 
 
+//Constant Arrays
+
 var generateBtn = document.querySelector("#generate");
 const alphabetLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 const alphabetUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -24,6 +26,8 @@ function generatePassword() {
   }
 
   alert("Okay! Click OK to continue customizing your password.");
+
+  //Lines 32-35 determine the restrictions of the password being created
 
   var confirmLowerCase = confirm("Click OK if you want to use lowercase letters.");
   var confirmUpperCase = confirm("Click OK if you want to use uppercase letters.");
@@ -60,6 +64,8 @@ function generatePassword() {
 
   console.log(passwordCharacters)
 
+//This is filled (emtpy string) from the 'for' loop that is pulling random character from the constant arrays on lines 8-11
+
   var randomizedPassword = ""
 
   for (var i = 0; i < confirmLength; i++) {
@@ -69,6 +75,8 @@ function generatePassword() {
   }
   return randomizedPassword;
 }
+
+//Pushes the password and writes
 
 function writePassword() {
   var password = generatePassword();
