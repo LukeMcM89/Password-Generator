@@ -16,3 +16,5 @@ Github Repository: https://github.com/LukeMcM89?tab=repositories
 
 
 ![image](./assets/Password_Gen.png)
+
+![image](./assets/Copy_to_Clip.png)
