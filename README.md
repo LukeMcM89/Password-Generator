@@ -6,9 +6,9 @@ The user must select a password between 8-128 characters, and select whether the
 
 Upon various user selections, the password is randomly generated.
 
-Going forward I would like to move more away from 'var' and get into the habit of utilizing 'let' per industry standards. I made stylistic changes to the CSS in an effort to make the interface and overall webpage less abrasive and more appealing to the user than a stale, bright white screen. 
+I made stylistic changes to the CSS in an effort to make the interface and overall webpage less abrasive and more appealing to the user, rather than a stale, bright-white screen. I also added an extra Copy-to-Clipboard function. 
 
-Thank you for your time. 
+Thank you for your time! 
 
 Deployed website: https://lukemcm89.github.io/Password-Generator/
 
