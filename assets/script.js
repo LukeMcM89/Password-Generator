@@ -1,3 +1,6 @@
+var passwordText = document.querySelector("#password");
+var copyBtn = document.getElementById("copy");
+
 document.querySelector("#generate").addEventListener("click", writePassword);
 
 // While I added uppercase, lowercase numbers, special symnbols and fullfilled the requirements, I also experimented further with adding emojis just for the fun of it. 
@@ -86,3 +89,12 @@ function writePassword() {
 
   passwordText.value = password;
 }
+
+function copyPassword() {
+  let copyText = document.querySelector("#password");
+  copyText.select();
+  document.execCommand("copy");
+  alert("Saved to Clipboard");
+}
+
+copyBtn.addEventListener("click", copyPassword);
