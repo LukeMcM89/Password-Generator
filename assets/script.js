@@ -1,4 +1,8 @@
+
 var passwordText = document.querySelector("#password");
+
+// For the copy-to-clip-board button. 
+
 var copyBtn = document.getElementById("copy");
 
 document.querySelector("#generate").addEventListener("click", writePassword);
@@ -81,7 +85,7 @@ function generatePassword() {
   return randomizedPassword;
 }
 
-//Pushes the password and writes
+//Pushes the password and writes.
 
 function writePassword() {
   var password = generatePassword();
@@ -89,6 +93,7 @@ function writePassword() {
 
   passwordText.value = password;
 }
+// Added a copy-to-clipboard.
 
 function copyPassword() {
   let copyText = document.querySelector("#password");
