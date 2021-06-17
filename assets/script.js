@@ -32,7 +32,7 @@ function generatePassword() {
     var confirmLength = (prompt("How many characters would you like your password to have?"));
   }
 
-  alert("Okay! Click OK to continue customizing your password.");
+  alert("Understood! Click OK to continue customizing your password.");
 
   //Lines 32-35 determine the restrictions of the password being created.
 
