@@ -27,7 +27,7 @@ var NumericCharacter;
 function generatePassword() {
   var confirmLength = (prompt("How many characters would you like your password to be?"));
 
-  while (confirmLength <= 7 || confirmLength >= 128) {
+  while (confirmLength <= 7 || confirmLength >= 129) {
     alert("Your password length must be between 8 - 128 characters! Please try again.");
     var confirmLength = (prompt("How many characters would you like your password to have?"));
   }
